@@ -1,0 +1,28 @@
+<div class="col col-9 pt-4 mt-4 container container-products">
+    <!-- Inicio de sesion -->
+      <h1 class="text-center">Inicio de sesión</h1>
+      <form #UserForm="ngForm">
+        <div class="form-group col col-12">
+          <label for="InputEmail1">ID USUARIO</label>
+          <input type="text" name="usuario" #usuario="ngModel" [(ngModel)]='user.usuario' class="form-control" 
+          placeholder="Número de boleta/Codigo de empleado" aria-label="Username"
+            aria-describedby="basic-addon1" required pattern="[0-9]{1,25}">
+            <small class="invalida" *ngIf="!usuario.valid && usuario.touched">
+              Número de boleta/Codigo de empleado Invalido
+          </small>
+        </div>
+        <div class="form-group col col-12">
+          <label for="InputPassword1">Contraseña</label>
+          <input type="password" name="pass" #pass="ngModel" [(ngModel)]='user.pass' class="form-control" id="InputPassword1" required pattern="[a-zA-Z]{1,25}">
+            
+       <small class="invalida" *ngIf="!pass.valid && pass.touched">
+            contraseña invalida favor de ingresar numeros
+        </small>
+        </div>
+        <div class="mx-auto col col-9" style="width: 90%;">
+          <button type="submit" class="btn btn-secondary col col-5" (click)="register()">registrate</button>
+          <button type="submit" class="btn btn-primary col col-5"  (click)="logMeIn()" [disabled]="UserForm.invalid">Enviar</button>
+        </div>
+       
+      </form>
+  </div>

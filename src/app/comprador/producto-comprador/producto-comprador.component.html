@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-12 col-md-3">
+      <div class="card">
+        <img [src]="product.img" [alt]="product.name" class="card-img-top" >
+        <div class="card-body">
+          <h5 class="card-title">{{ product.nombre }}</h5>
+          <p class="card-text">{{ product.precio }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{ product.cantidad }}</li>
+          <li class="list-group-item">{{ product.precio }}</li>
+          <li class="list-group-item">{{ product.categoryid }}</li>
+        </ul>
+        <div class="card-body">
+          <button type="button" class="btn btn-primary mx-1" data-bs-toggle="modal" data-bs-target="#exampleModa3">Añadir al carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  
+  <div class="row" *ngIf="show">
+    <div class="card card-body col-11 offset-1">
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModa3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Añadido al carrito
+        </div>
+      </div>
+    </div>
+  </div>

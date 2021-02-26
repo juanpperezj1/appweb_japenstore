@@ -1,0 +1,27 @@
+
+
+<body> 
+  
+  <div *ngIf="user.username === 'Juan'" class="card  border border-dark border-3  " style="width: 18rem;">
+    <img src="https://i.pinimg.com/originals/2f/97/66/2f976664b66d0e87c9fc87305e5828dc.jpg" class="card-img-top border border-dark border-2" alt="Mona China">
+    <div class="card-body" >
+      <h5 class="card-title">{{ user.username }} {{ user.lastname }}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Rol: {{ user.rol }}</li>
+      <li class="list-group-item">Boleta: {{ user.boleta }}</li>
+      <li class="list-group-item">Comtraseña: {{ user.pass }}</li>
+      <li class="list-group-item">e-mail: {{ user.email }}</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="btn btn-outline-dark">Actualizar Informacion</a>
+    </div>
+  </div>
+
+
+
+
+<br><br>
+
+
+</body>

@@ -1,0 +1,82 @@
+  <!--<div class="col col-9 pt-4 mt-4 container container-products">
+    <form #UserForm="ngForm">
+        <h1 class="text-center">Registro de usuarios</h1>
+        <div class="input-group mb-3">
+            <span class="input-group-text " id="basic-addon1">Nombre</span>
+            <input type="text" class="form-control" name="username" #username="ngModel" [(ngModel)]='user.username'
+                placeholder="Nombre" aria-label="Username" required pattern="[a-zA-Z]{1,50}"
+                aria-describedby="basic-addon1">
+            <small class="invalida col col-12" *ngIf="!username.valid && username.touched">
+                Nombre/s Invalido/s
+            </small>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Apellidos</span>
+            <input type="text" name="lastname" #lastname="ngModel" [(ngModel)]='user.lastname' class="form-control"
+                placeholder="Apellidos" aria-label="Recipient's username"  required pattern="[a-zA-Z]{1,50}"
+                aria-describedby="basic-addon2">
+            <small class="invalida col col-12" *ngIf="!lastname.valid && lastname.touched">
+                Apellidos invalidos
+            </small>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">Email</span>
+            <input type="text" class="form-control" placeholder="Ejemplo: example@gmail.com"
+                aria-label="Recipient's username" aria-describedby="basic-addon3"
+                name="email" #email="ngModel" [(ngModel)]='user.email' required>
+                <small class="invalida col col-12" *ngIf="!email.valid && email.touched">
+                    email invalido
+                </small>
+        </div>
+        <div class="col-md-3 position-relative">
+            <label for="validationTooltip04" class="form-label">Roles</label>
+            <select class="form-select" [(ngModel)]='user.rol'  #rol="ngModel"   name="rol">
+                <option [value]="dropDown.option" *ngFor="let dropDown of existingCoverList">
+                    {{ dropDown.option }}
+                </option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon4">Codigo de autentificacion</span>
+            <input type="text" class="form-control"  aria-label="Recipient's username"
+                aria-describedby="basic-addon4" name="codigo" #codigo="ngModel" [(ngModel)]="user.boleta" required
+                pattern="[0-9]{1,30}"  >
+               <small class="invalida col col-12" *ngIf="!codigo.valid && codigo.touched">
+                Codigo Invalido
+            </small>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon5">Contraseña</span>
+            <input type="password" class="form-control"  aria-label="Recipient's username"
+                aria-describedby="basic-addon4"  id="InputPassword1" name="pass" #pass="ngModel" [(ngModel)]="user.pass" required>
+               <small class="invalida col col-12" *ngIf="!pass.valid && pass.touched">
+                Favor de rellenar este campo
+            </small>
+        </div>
+        <div class="mx-auto col col-9" style="width: 90%;">
+            <button type="submit" class="btn btn-secondary col col-5">Cancelar</button>
+            --><!-- Button trigger modal 
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit" class="btn btn-primary col col-5" [disabled]="UserForm.invalid" (click)="addUser()">Enviar</button>
+        </div>
+    </form>
+</div>
+
+
+   Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Usuario Registrado exitosamente</h5>
+        </div>
+        <div class="modal-body">
+          El usuario {{ user.username }} ha sido creado exitosamente
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="redirect()">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>

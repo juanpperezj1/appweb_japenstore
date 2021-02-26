@@ -1,0 +1,12 @@
+#content{
+    position: relative;
+    width: 70%;
+    float: left;
+    min-height: 650px;
+    margin-right:15px;
+    margin-top: 40px;
+}
+.clearfix{
+    clear: both;
+    float:none;
+}

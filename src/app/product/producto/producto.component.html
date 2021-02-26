@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-12 col-md-3">
+    <div class="card">
+      <img [src]="product.img" [alt]="product.name" class="card-img-top" >
+      <div class="card-body">
+        <h5 class="card-title">{{ product.nombre }}</h5>
+        <p class="card-text">{{ product.precio }}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ product.cantidad }}</li>
+        <li class="list-group-item">{{ product.precio }}</li>
+        <li class="list-group-item">{{ product.categoryid }}</li>
+      </ul>
+      <div class="card-body">
+        <button type="button" class="btn btn-primary mx-1" data-bs-toggle="modal" data-bs-target="#exampleModa3" (click)="editarproducto(product)">Editar</button>
+        <button type="button" class="btn btn-danger  mx-1" (click)="eliminarproducto(product._id)">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--
+        <div class="container-fluid">
+          <div class="row borde">
+            <div class="col-xl-2 col-lg-2 negritas"><p class="celdat">{{ product.nombre }}</p></div>
+            <div class="col-xl-2 col-lg-2 color1"><p class="celdat">{{ product.categoryid }}</p></div>
+            <div class="col-xl-2 col-lg-2"><p class="celdat">{{ product.cantidad }}</p></div>
+            <div class="col-xl-2 col-lg-2 color1"><p class="celdat">{{ product.precio }}</p></div>
+            <div class="col-xl-2 col-lg-2 text-center"><img  [src]="product.img" [alt]="product.name" class="img img-responsive w-50"></div>
+            <div class="col-xl-1 col-lg-1 text-center"><button class="btn btn-primary superior"  data-bs-toggle="modal" data-bs-target="#exampleModa2" (click)="editarproducto(product)">Editar</button></div>
+            <div class="col-xl-1 col-lg-1 text-center"><button class="btn btn-danger superior" (click)="eliminarproducto(product._id)">Eliminar</button></div>
+          </div>
+        </div>
+     --> 
+
+
+<div class="row" *ngIf="show">
+  <div class="card card-body col-11 offset-1">
+  </div>
+</div>
+<div class="modal fade" id="exampleModa3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <app-update-product (chossen)="editarproducto($event)" [product]="usuarioelegido" #selector2></app-update-product>
+      </div>
+    </div>
+  </div>
+</div>

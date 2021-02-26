@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+
+  <div class="container-fluid ">
+   
+  <div>
+    <div class="p-4 row">
+      <div class="d-flex flex-column col-12 collapse" id="collapseExample1">
+        <app-perfil (userSeleccionado)="verUsuario( $event )" [user]="foo" [index]="i" *ngFor="let foo of users; let i = index"></app-perfil>  
+      </div>    
+    </div>
+  </div>
+  
+  <ng-template #elseBlock1>
+    <div class="d-flex justify-content-center align-items-center">
+        <p class="mt-3 h5">Users service is not available</p>  
+    </div>
+  </ng-template>
+  
+  </div>

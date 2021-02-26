@@ -1,0 +1,63 @@
+
+<!--
+<section>
+
+      
+        <div class="container-fluid">
+          <div class="row borde">
+            <div class="col-xl-2 col-lg-2 negritas"><p class="celdat">{{ user._id }}</p></div>
+            <div class="col-xl-2 col-lg-2 color1"><p class="celdat">{{ user.username }}</p></div>
+            <div class="col-xl-2 col-lg-2"><p class="celdat">{{ user.lastname }}</p></div>
+            <div class="col-xl-2 col-lg-2 color1"><p class="celdat">{{ user.rol }}</p></div>
+            
+            <div class="col-xl-1 col-lg-1 text-center"><button class="btn btn-primary superior">Editar</button></div>
+            <div class="col-xl-1 col-lg-1 text-center"><button class="btn btn-danger superior">Eliminar</button></div>
+          </div>
+        </div>
+      
+      <div class="row" *ngIf="show">
+        <div class="card card-body col-11 offset-1">
+        </div>
+      </div>
+    </section>
+
+  --> 
+
+<tr>
+      <td >{{ user._id }}</td>
+      <td >{{ user.username }}</td>
+      <td >{{ user.lastname }}</td>
+      <td >{{ user.rol }}</td>
+      <td >{{ user.boleta }}</td>
+      <td >{{ user.email }}</td>
+      
+</tr>
+
+<!--
+<section class="row">
+    <div class="col-12">  
+      <table class="table table-dark table-hover row">
+         <tbody class="col-12">
+           <tr class="table-active row">
+             <td class="col-12 col-md-2">{{ user._id }}</td>
+             <td class="col-12 col-md-1">{{ user.username }}</td>
+             <td class="col-12 col-md-1">{{ user.lastname }}</td>
+             <td class="col-12 col-md-1">{{ user.rol }}</td>
+             <td class="col-12 col-md-2">{{ user.boleta }}</td>
+             <td class="col-12 col-md-3">{{ user.email }}</td>
+             <td class="col-12 col-md-2">
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-outline-primary">Editar</button>
+                <button type="button" class="btn btn-outline-danger">Eliminar</button>
+              </div>
+             </td>
+           </tr>
+         </tbody>
+       </table>
+    </div>
+      <div class="row" *ngIf="show">
+          <div class="card card-body col-11 offset-1">
+          </div>
+      </div>
+</section>
+-->

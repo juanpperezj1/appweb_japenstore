@@ -1,0 +1,84 @@
+<div class="col col-9 pt-4 mt-4 container container-products">
+    <form #ProductForm="ngForm">
+        <h1 class="text-center">Registro de Productos</h1>
+        <div class="input-group mb-3">
+            <span class="input-group-text " id="basic-addon1">Nombre</span>
+            <input type="text" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]='product.nombre'
+                placeholder="Nombre del producto" aria-label="Nombre" required pattern="[a-z A-Z]{1,50}"
+                aria-describedby="basic-addon1">
+            <small class="invalida col col-12" *ngIf="!nombre.valid && nombre.touched">
+                Nombre de producto invalido
+            </small>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Cantidad</span>
+            <input type="text" name="cantidad" #cantidad="ngModel" [(ngModel)]='product.cantidad' class="form-control"
+                placeholder="Cantidad de productos" aria-label="Recipient's username" required pattern="[0-9.]{1,25}"
+                aria-describedby="basic-addon2">
+            <span class="input-group-text" id="basic-addon3">Precio</span>
+            <input type="text" class="form-control" placeholder="Precio del producto"
+                aria-label="Recipient's username" aria-describedby="basic-addon3" name="precio" #precio="ngModel"
+                [(ngModel)]='product.precio' required pattern="[0-9.]{1,25}">
+            <small class="invalida col col-12" *ngIf="!cantidad.valid && cantidad.touched">
+                Favor de ingresar cantidad
+            </small>
+            <small class="invalida col col-12" *ngIf="!precio.valid && precio.touched">
+                Favor de agregar precio
+                </small>
+        </div>
+
+        <div class="col-md-3 position-relative">
+            <label for="validationTooltip04" class="form-label">Categoria</label>
+            <select class="form-select" [(ngModel)]='product.categoryid'  #categoryid="ngModel"   name="categoryid">
+                <option [value]="dropDown.option" *ngFor="let dropDown of existingCoverList">
+                    {{ dropDown.option }}
+                </option>
+            </select>
+
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text " id="basic-addon1">Descripcion</span>
+            <input type="text" class="form-control" name="descripcion" #descripcion="ngModel" [(ngModel)]='product.descripcion'
+                placeholder="Nombre del producto" aria-label="descripcion" required pattern="[a-z A-Z]{1,50}"
+                aria-describedby="basic-addon1">
+            <small class="invalida col col-12" *ngIf="!descripcion.valid && descripcion.touched">
+                Descripcion de producto invalido
+            </small>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text " id="basic-addon1">Imagen(url)</span>
+            <input type="text" class="form-control" name="img" #img="ngModel" [(ngModel)]='product.img'
+                placeholder="Nombre del producto" aria-label="img" required
+                aria-describedby="basic-addon1">
+            <small class="invalida col col-12" *ngIf="!img.valid && img.touched">
+                Imagen de producto invalido
+            </small>
+        </div>
+
+ 
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupFile01">Imagen</label>
+            <input type="file" class="form-control" id="inputGroupFile01">
+        </div>
+        <div class="mx-auto col col-9" style="width: 90%;">
+            <button type="submit" class="btn btn-secondary col col-5">Cancelar</button>
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal3" type="submit" class="btn btn-primary col col-5" (click)="editar(product)">Enviar</button>
+        </div>
+    </form>
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edicion</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            El producto {{ product.nombre }} ha sido editado exitosamente
+        </div>
+      </div>
+    </div>
+  </div>
